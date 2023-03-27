@@ -1,0 +1,42 @@
+@import "./variables";
+@import "./libs/normalize";
+
+@import "./components/all";
+
+body {
+  background-color: $background;
+}
+
+.wrapper {
+  width: calc(100vw - 100px);
+  height: 100%;
+  background-color: #fff;
+  margin: 50px auto;
+  border-radius: 10px;
+  max-width: 1400px;
+
+  @media (max-width: 899px) {
+    width: 100%;
+    margin: unset;
+    border-radius: unset;
+  }
+}
+
+.content {
+  padding: 40px 0;
+
+  @media (max-width: 899px) {
+    padding: 30px 0;
+  }
+}
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+  column-gap: 15px;
+
+  @media (max-width: 599px) {
+    column-gap: unset;
+  }
+}
+

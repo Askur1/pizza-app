@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  column-gap: 10px;
+
+
+  @media (max-width: 599px) {
+    column-gap: 6px;
+  }
+
+  a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #666;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    user-select: none;
+    &:hover {
+      background-color: #fe5f1e;
+      border: 1px solid #fe5f1e;
+      color: #fff;
+    }
+
+    @media (max-width: 599px) {
+      width: 38px;
+      height: 38px;
+      font-size: 14px;
+    }
+  }
+
+  :global {
+    .selected {
+      a {
+        color: #fff;
+        background-color: #fe5f1e;
+        border: 1px solid #fe5f1e;
+      }
+    }
+  }
+}

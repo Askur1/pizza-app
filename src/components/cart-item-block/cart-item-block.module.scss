@@ -1,0 +1,174 @@
+@import "../../scss/variables";
+
+.image {
+  width: 260px;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid $gray-line;
+  padding: 30px 0 0;
+  margin: 30px 0 0;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    padding: 25px 0 0;
+    margin: 25px 0 0;
+
+    &:first-child {
+      border: unset;
+    }
+  }
+
+  &-name {
+    width: 52%;
+    display: flex;
+
+    @media (max-width: 599px) {
+      width: 100%;
+      margin: 0 0 20px;
+    }
+  }
+
+  &-description {
+    width: 42%;
+    display: flex;
+
+    @media (max-width: 599px) {
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &-img {
+    margin-right: 20px;
+
+    @media (max-width: 899px) {
+      margin-right: 15px;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &-info {
+    h3 {
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 27px;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      font-size: 18px;
+      color: #8d8d8d;
+    }
+
+    @media (max-width: 599px) {
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-count {
+    width: 51%;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    &-minus {
+      svg {
+        path:first-of-type {
+          display: none;
+        }
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        border-color: #787878;
+
+        &:hover {
+          background-color: unset;
+        }
+
+        &:active {
+          transform: unset;
+        }
+
+        svg path {
+          fill: #787878;
+        }
+      }
+    }
+
+    b {
+      font-size: 22px;
+    }
+
+    @media (max-width: 599px) {
+      justify-content: flex-end;
+      b {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-price {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    b {
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 599px) {
+      justify-content: flex-start;
+
+      b {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-remove {
+    @media (max-width: 599px) {
+      display: none;
+    }
+
+    svg {
+      transform: rotate(45deg);
+
+      path {
+        fill: darken($color: $gray-line, $amount: 15);
+      }
+    }
+
+    .button {
+      border-color: darken($color: $gray-line, $amount: 10);
+      svg {
+        width: 11.5px;
+        height: 11.5px;
+        position: relative;
+      }
+      &:hover,
+      &:active {
+        border-color: darken($color: $gray-line, $amount: 80);
+        background-color: darken($color: $gray-line, $amount: 80);
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+@import "../variables";
+
+.button {
+  display: inline-block;
+  background-color: $orange;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
+  border: 1px solid transparent;
+  @include noselect();
+
+  
+  @media (max-width: 599px) {
+    padding: 8px 15px;
+  }
+
+  &,
+  span {
+    color: #fff;
+  }
+
+  i,
+  span,
+  path,
+  svg {
+    transition: all $duration ease-in-out;
+  }
+
+  &:hover {
+    background-color: darken($orange, 8%);
+  }
+
+  &:active {
+    background-color: darken($orange, 12%);
+    transform: translateY(1px);
+  }
+
+  &--circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-width: 2px;
+
+    @media (max-width: 599px) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &--black {
+    background-color: $black;
+
+    &:hover,
+    &:active {
+      background-color: lighten($color: $black, $amount: 10);
+    }
+  }
+
+  &--outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+    background-color: #fff;
+    border-color: $orange;
+    &,
+    span {
+      color: $orange;
+    }
+
+    svg {
+      path {
+        fill: $orange;
+      }
+    }
+
+    &:hover {
+      background-color: $orange;
+
+      &,
+      span {
+        color: #fff;
+      }
+
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    &:active {
+      background-color: darken($orange, 8%);
+    }
+
+    @media (max-width: 599px) {
+      column-gap:unset;
+    }
+  }
+
+  &__delimiter {
+    width: 1px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin-left: 14px;
+    margin-right: 14px;
+
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+
+  &__price {
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+
+  &--add {
+    span {
+      font-weight: 600;
+      font-size: 16px;
+
+      @media (max-width: 599px) {
+        font-size: 12px;
+      }
+    }
+
+    &:hover {
+      i {
+        background-color: #fff;
+        color: $orange;
+      }
+    }
+
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #fe5f1e;
+      color: #fff;
+      font-weight: 600;
+      font-style: normal;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &--cart {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+
+    svg {
+      margin-right: 8px;
+      margin-bottom: 1px;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    @media (max-width: 899px) {
+      padding: 6px 18px;
+    }
+
+    @media (max-width: 599px) {
+      padding: 10px 18px;
+    }
+  }
+}
